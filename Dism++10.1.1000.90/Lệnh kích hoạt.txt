@@ -1,0 +1,56 @@
+
+Nhan StartMenu , go cmd roi chuot phai vao Command Promt chon (Run as Administrator)
+Roi coppy nhom lenh duoi dan vao Command go "Enter"
+------------------------
+Net stop Sppsvc 
+Net stop Osppsvc 
+------------------------
+Sau khi Restore xong copy tiep nhom lenh duoi vao Command go "Enter"
+
+Windows
+------------------------------------------------------------------------
+Sc config Sppsvc start= auto & Net.exe start Sppsvc
+Sc config Osppsvc  start= auto & Net.exe start Osppsvc
+Sc config wuauserv start= auto & Net.exe start wuauserv
+Sc config LicenseManager start= auto & Net.exe start LicenseManager
+Cscript.exe /nologo %windir%\system32\slmgr.vbs /rilc
+Cscript.exe /nologo %windir%\system32\slmgr.vbs -dli
+Cscript.exe /nologo %windir%\system32\slmgr.vbs -ato
+------------------------------------------------------------------------------------------------
+
+Office
+
+Version Office 2010
+
+Set v=4
+if exist "%ProgramFiles%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office1%v%"
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%v%"
+cscript.exe OSPP.vbs /dstatus
+------------------------------------------------------------------------------------------------
+
+Version Office 2013
+
+Set v=5
+if exist "%ProgramFiles%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office1%v%"
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%v%"
+cscript.exe OSPP.vbs /dstatus
+------------------------------------------------------------------------------------------------
+
+Version Office 2016
+
+Set v=6
+if exist "%ProgramFiles%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office1%v%"
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%v%"
+cscript.exe OSPP.vbs /dstatus
+------------------------------------------------------------------------------------------------
+
+Version Office 2019
+
+Set v=6
+if exist "%ProgramFiles%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office1%v%"
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%v%\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%v%"
+cscript.exe OSPP.vbs /dstatus
+
+------------------------------------------------------------------------------------------------
+
+
